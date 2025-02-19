@@ -41,4 +41,5 @@ spec:
   ports:
   - port: 8200
     targetPort: 8200
-  type: ClusterIP
+  type: LoadBalancer
+  
