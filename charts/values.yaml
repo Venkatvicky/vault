@@ -1,0 +1,20 @@
+replicaCount: 1
+
+image:
+  repository: hashicorp/vault
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8200
+
+ingress:
+  enabled: true
+  className: "nginx"
+  hosts:
+    - host: vault.cloudmasa.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
